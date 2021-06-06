@@ -149,8 +149,10 @@ def check():  # pragma: no cover
         connections.databases, _Databases
     ):
         raise RuntimeError(
-            'Must use pgconnection.databases() when configuring'
-            ' settings.DATABASES'
+            'django-pgconnection is not configured correctly! One must'
+            ' set DATABASES = pgconnection.configure({"default": ...})'
+            ' in settings.py. See the'
+            ' docs at https://django-pgconnection.readthedocs.io'
         )
 
     for alias, config in settings.DATABASES.items():
