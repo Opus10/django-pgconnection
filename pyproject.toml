@@ -12,7 +12,7 @@ name = "django-pgconnection"
 packages = [
   { include = "pgconnection" }
 ]
-version = "1.0.1"
+version = "1.0.2"
 description = "Route postgres connections and hook into cursor execution"
 authors = ["Wes Kendall"]
 classifiers = [

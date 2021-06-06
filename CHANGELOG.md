@@ -1,5 +1,10 @@
 # Changelog
-## 1.0.1 (2020-06-28)
+## 1.0.2 (2021-06-05)
+### Trivial
+  - Updated with the latest Django template [Wes Kendall, ea48608]
+  - Fix error message when checking pgconnection configuration. [Wes Kendall, b81579d]
+
+## 1.0.1 (2020-06-29)
 ### Trivial
   - Updated with the latest public django app template. [Wes Kendall, 33f6de1]
 
