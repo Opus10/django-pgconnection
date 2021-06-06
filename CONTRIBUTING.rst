@@ -10,7 +10,7 @@ Setup
 
 Set up your development environment with::
 
-    git clone git@github.com:jyveapp/django-pgconnection.git
+    git clone git@github.com:Opus10/django-pgconnection.git
     cd django-pgconnection
     make setup
 
