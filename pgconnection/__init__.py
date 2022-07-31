@@ -4,6 +4,7 @@ from pgconnection.core import connect_pre_execute_hook
 from pgconnection.core import disconnect_pre_execute_hook
 from pgconnection.core import pre_execute_hook
 from pgconnection.core import route
+from pgconnection.version import __version__
 
 
 __all__ = [
@@ -13,4 +14,5 @@ __all__ = [
     'disconnect_pre_execute_hook',
     'pre_execute_hook',
     'route',
+    '__version__',
 ]

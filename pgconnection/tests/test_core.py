@@ -28,9 +28,7 @@ def test_route_guard(mocker):
     """
     # Disable the check so that we can route the current database to
     # itself
-    mocker.patch(
-        'pgconnection.core._check_source_is_not_destination', autospec=True
-    )
+    mocker.patch('pgconnection.core._check_source_is_not_destination', autospec=True)
 
     # Even when we route the database to itself (and bypass the default check),
     # a pgplus cursor will protect the source database from being queried
@@ -50,9 +48,7 @@ def test_route(mocker):
     """
     # Disable the checks and guards so that we can route the source
     # database to itself
-    mocker.patch(
-        'pgconnection.core._check_source_is_not_destination', autospec=True
-    )
+    mocker.patch('pgconnection.core._check_source_is_not_destination', autospec=True)
     mocker.patch(
         'pgconnection.core._guard_source_database_access',
         autospec=True,
