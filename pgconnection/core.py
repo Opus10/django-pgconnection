@@ -174,10 +174,7 @@ def _make_uri(*, user, host, port, dbname):
     host = host or '<none>'
     port = port or '<none>'
     dbname = dbname or '<none>'
-    return (
-        f'postgres://{user.strip()}@{host.strip()}'
-        f':{str(port).strip()}/{dbname.strip()}'
-    )
+    return f'postgres://{user.strip()}@{host.strip()}' f':{str(port).strip()}/{dbname.strip()}'
 
 
 def _make_uri_from_dsn(dsn):
@@ -266,9 +263,7 @@ def disconnect_pre_execute_hook(hook_func, using='default'):
     uri = _make_uri_from_config(settings.DATABASES[using])
 
     if hook_func not in hooks.pre_execute[uri]:  # pragma: no cover
-        raise ValueError(
-            f'pre_execute hook function not found for database "{using}"'
-        )
+        raise ValueError(f'pre_execute hook function not found for database "{using}"')
 
     hooks.pre_execute[uri].remove(hook_func)
 
@@ -292,16 +287,13 @@ def _check_source_is_not_destination(source, destination):
     source_uri = _make_uri_from_config(source)
     destination_uri = _make_uri_from_config(destination)
     if source_uri == destination_uri:  # pragma: no cover
-        raise ValueError(
-            'Source and destination databases cannot be the same when routing'
-        )
+        raise ValueError('Source and destination databases cannot be the same when routing')
 
 
 def _guard_source_database_access(sql, args, cursor):
     """A pgconnection hook that guards source database access while routing"""
     raise RuntimeError(
-        'Cannot execute queries on the source database'
-        ' during pgconnection routing'
+        'Cannot execute queries on the source database' ' during pgconnection routing'
     )
 
 
@@ -320,9 +312,7 @@ def route(destination, using='default'):
             routing to another database. Defaults to the default database.
     """
     pgconnection.check()
-    if (
-        not isinstance(destination, dict) or 'ENGINE' not in destination
-    ):  # pragma: no cover
+    if not isinstance(destination, dict) or 'ENGINE' not in destination:  # pragma: no cover
         raise ValueError(
             'Destination database must be a configuration dictionary in the'
             ' same format as databases from settings.DATABASES.'
@@ -330,9 +320,7 @@ def route(destination, using='default'):
 
     _check_source_is_not_destination(settings.DATABASES[using], destination)
 
-    with pgconnection.pre_execute_hook(
-        _guard_source_database_access, using=using
-    ):
+    with pgconnection.pre_execute_hook(_guard_source_database_access, using=using):
         # Store the original source database and connection so that the
         # destination can be put it its place
         source_connection = connections[using]
