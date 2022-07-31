@@ -1,5 +1,9 @@
 # Changelog
-## 1.0.2 (2021-06-05)
+## 1.0.3 (2022-07-31)
+### Trivial
+  - Updated with latest Django temlate, fixing doc builds [Wes Kendall, 2181b3c]
+
+## 1.0.2 (2021-06-06)
 ### Trivial
   - Updated with the latest Django template [Wes Kendall, ea48608]
   - Fix error message when checking pgconnection configuration. [Wes Kendall, b81579d]
