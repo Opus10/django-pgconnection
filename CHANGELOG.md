@@ -1,4 +1,9 @@
 # Changelog
+
+## Pending
+### Trivial
+  - Django 4.1 support.
+
 ## 1.0.3 (2022-07-31)
 ### Trivial
   - Updated with latest Django temlate, fixing doc builds [Wes Kendall, 2181b3c]
