@@ -1,7 +1,7 @@
 # Changelog
 
 ## Pending
-### Trivial
+### Feature
   - Django 4.1 support.
 
 ## 1.0.3 (2022-07-31)
