@@ -1,3 +1,5 @@
+*Note* - This repository is archived. All of the functionality previously offered by django-pgconnection is now available in Django's connection hooks
+
 django-pgconnection
 ###################
 
